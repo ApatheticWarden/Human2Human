@@ -25,6 +25,17 @@ def get_size(df, settings):
     
     return start + dataIndex
 
+def get_sheets(path):
+    file = pd.ExcelFile(path)
+    if not file:
+       msg_error("No file found")
+    sheets = file.sheet_names
+    
+    if not sheets:
+        msg_warning("No sheets found")
+
+    return sheets
+
 # Исполнитель
 def get_data_vertical(path, cols, sRow=0, maxEmpty=5):
     settings = {
@@ -36,15 +47,9 @@ def get_data_vertical(path, cols, sRow=0, maxEmpty=5):
         msg_error("Columns must be > 0!")
         return None
 
-    file = pd.ExcelFile(path)
-    if not file:
-       msg_error("No file found")
-    sheets = file.sheet_names
-    
-    if not sheets:
-        msg_warning("No sheets found")
+    sheets = get_sheets(path)    
 
-    msg_info(sheets)
+    # msg_info(sheets)
 
     data = []   # массив данных для каждого дня
     for sheet in sheets:

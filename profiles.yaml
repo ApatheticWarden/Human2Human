@@ -1,0 +1,29 @@
+profiles:
+  - name: "ZLI"
+    columns: 6
+    startRow: 6
+    maxEmptyRows: 10
+    referenceColumn: 5
+    materialColumn: 3
+    countColumn: 4
+    week_order:
+      - Poniedzialek
+      - Wtorek
+      - Sroda
+      - Czwartek
+      - Piatek
+      - Sobota
+  - name: "Lotnisko"
+    columns: 6
+    startRow: 6
+    maxEmptyRows: 10
+    referenceColumn: 5
+    materialColumn: 3
+    countColumn: 4
+    week_order:
+      - Poniedzialek
+      - Wtorek
+      - Sroda
+      - Czwartek
+      - Piatek
+      - Sobota
